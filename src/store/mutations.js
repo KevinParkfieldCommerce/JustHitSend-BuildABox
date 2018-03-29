@@ -11,7 +11,11 @@ let mutations = {
 				state.ribbonProducts.push(payLoad);
 				break;
 		}
-		//console.log(payLoad);
+	},
+	addAddonProduct(state, payLoad) {
+		if (state.selectedAddonProducts.length <= 4){
+			state.selectedAddonProducts.push(payLoad);
+		}
 	}
 };
 
