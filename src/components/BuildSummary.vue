@@ -4,10 +4,10 @@
 		<p>Pick 3 items for $50, 4 items for $65 or 5 items for $75.</p>
 		<div class="BuildSummary__info">
 			<ul class="BuildSummary__list">
-				<li v-for="(product,n) in getSelectedAddons" class="BuildSummary__addonProduct">
+				<li v-for="product in getSelectedAddons" class="BuildSummary__addonProduct">
 					<div class="BuildSummary__itemWrapper">
 						<div class="BuildSummary__productOverlay">
-							<button>REMOVE</button>
+							<button @click="removeAddon(product)">REMOVE</button>
 						</div>
 						<img :src="product.images[0].src">
 					</div>
@@ -34,10 +34,9 @@
 			}
 		},
 		methods: {
-			test(p){
-				return p.hasOwnProperty('title');
+			removeAddon(product){
+				this.$store.commit('removeSelectedAddon', product);
 			}
-
 		}
 	}
 </script>

@@ -16,6 +16,12 @@ let mutations = {
 		if (state.selectedAddonProducts.length < 5){
 			state.selectedAddonProducts.push(payLoad);
 		}
+	},
+	removeSelectedAddon(state, payLoad) {
+		let index = state.selectedAddonProducts.findIndex( (addon) => {
+			return addon.id == payLoad.id;
+		});
+		state.selectedAddonProducts.splice(index, 1);
 	}
 };
 
