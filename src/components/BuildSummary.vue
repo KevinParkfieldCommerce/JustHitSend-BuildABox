@@ -4,7 +4,7 @@
 		<p>Pick 3 items for $50, 4 items for $65 or 5 items for $75.</p>
 		<div class="BuildSummary__info">
 			<ul class="BuildSummary__list">
-				<li v-for="product in getSelectedAddons" class="BuildSummary__addonProduct">
+				<li v-for="(product,n) in getSelectedAddons" class="BuildSummary__addonProduct">
 					<div class="BuildSummary__itemWrapper">
 						<div class="BuildSummary__productOverlay">
 							<button>REMOVE</button>
@@ -13,6 +13,11 @@
 					</div>
 					<span>{{ product.title }}</span>
 				</li>
+				<li v-for="n in getEmptySlots" class="BuildSummary__emptySlotWrapper">
+					<div class="BuildSummary__emptySlot">
+						<span>Select an item below</span>
+					</div>		
+				</li>
 			</ul>
 		</div>
 	</div>
@@ -20,19 +25,18 @@
 
 <script type="text/javascript">
 	export default {
-		data() {
-			return {
-				itemsLeft: 5
-			};
-		},
 		computed: {
 			getSelectedAddons() {
-				let addonProds = this.$store.state.selectedAddonProducts;
-				this.itemsLeft--;
-				return addonProds;
+				return this.$store.state.selectedAddonProducts;
+			},
+			getEmptySlots() {
+				return 5-this.$store.state.selectedAddonProducts.length;
 			}
 		},
 		methods: {
+			test(p){
+				return p.hasOwnProperty('title');
+			}
 
 		}
 	}

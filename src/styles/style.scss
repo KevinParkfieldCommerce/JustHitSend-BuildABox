@@ -5,6 +5,7 @@ $add-btn: #BCC3BF;
 $view-btn: #D9D9D9;
 $remove-btn: #000;
 $btn-text: #FFF;
+$empty-slot-text: #B2B2B2;
 $text: #000;
 
 .BuildBox {
@@ -36,7 +37,8 @@ $text: #000;
 			font-size: 14px;
 			font-weight: bold;
 			letter-spacing: 2px;
-			margin: 35px 0 59px;
+			margin: 35px auto 59px;
+			width: 85%;
 		}
 	}
 	&__wrapper {
@@ -112,6 +114,8 @@ $text: #000;
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
+		padding: 0;
+		margin: 0;
 	}
 	&__addonProduct {
 		width: 20%;
@@ -121,7 +125,8 @@ $text: #000;
 			font-size: 10px;
 			font-weight: bold;
 			letter-spacing: 1.43px;
-			margin-top: 20px;
+			margin: 20px auto 63px;
+			width: 90%
 		}
 	}
 	&__itemWrapper {
@@ -164,6 +169,24 @@ $text: #000;
 			cursor: pointer;
 			background-color: $remove-btn;
 			font-size: 12px;
+		}
+	}
+	&__emptySlotWrapper {
+		width: 20%;
+	}
+	&__emptySlot {
+		height: 109px;
+		width: 109px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		text-align: center;
+		border: 1px solid $item-border;
+		margin: 0 auto 108px;
+		span {
+			font-size: 12px;
+			letter-spacing: 1.43px;
+			color: $empty-slot-text;
 		}
 	}
 }

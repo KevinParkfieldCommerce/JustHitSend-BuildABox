@@ -13,7 +13,7 @@ let mutations = {
 		}
 	},
 	addAddonProduct(state, payLoad) {
-		if (state.selectedAddonProducts.length <= 4){
+		if (state.selectedAddonProducts.length < 5){
 			state.selectedAddonProducts.push(payLoad);
 		}
 	}
