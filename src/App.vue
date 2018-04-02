@@ -1,33 +1,44 @@
 <template>
   <div class="BuildBox">
-  	<BuildSummary></BuildSummary>
-	<AddonProducts></AddonProducts>
+  	<PageBar></PageBar>
+  	<keep-alive>
+  		<component :is="getSelectedComponent"></component>
+  	</keep-alive>
   </div>
 </template>
 
 <script>
-import AddonProducts from './components/AddonProducts.vue'
-import BuildSummary from './components/BuildSummary.vue'
+	import PageBar from './components/PageBar.vue'
+	import SelectItems from './components/SelectItems.vue'
+	import WriteMessage from './components/WriteMessage.vue'
+	import PickRibbon from './components/PickRibbon.vue'
+	import Summary from './components/Summary.vue'
 
-export default {
-	computed: {
-		getMainProd() {
-			let mainProd = this.$store.state.mainProduct;
-			return mainProd;
+	export default {
+		computed: {
+			getSelectedComponent() {
+				return this.$store.state.selectedComponent;
+			},
+			getMainProd() {
+				let mainProd = this.$store.state.mainProduct;
+				return mainProd;
+			},
+			getAddonProd() {
+				let mainProd = this.$store.state.addonProducts;
+				return mainProd;
+			},
+			getRibbonProd() {
+				let mainProd = this.$store.state.ribbonProducts;
+				return mainProd;
+			}
 		},
-		getAddonProd() {
-			let mainProd = this.$store.state.addonProducts;
-			return mainProd;
-		},
-		getRibbonProd() {
-			let mainProd = this.$store.state.ribbonProducts;
-			return mainProd;
+		components: {
+			PageBar,
+			SelectItems,
+			WriteMessage,
+			PickRibbon,
+			Summary
 		}
-	},
-	components: {
-		AddonProducts,
-		BuildSummary
 	}
-}
 </script>
 
