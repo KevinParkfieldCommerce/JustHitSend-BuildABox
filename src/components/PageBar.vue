@@ -1,5 +1,50 @@
 <template>
 	<div class="PageBar">
-		PageBar
+		<div class="PageBar__btn" @click="changeStep('SelectItems')">
+			<div class="PageBar__dot"></div>
+			<span class="stepTitle">
+				STEP 1
+			</span>
+			<span class="stepHeading">
+				Choose Your Items
+			</span>
+		</div>
+		<div class="PageBar__btn" @click="changeStep('WriteMessage')">
+			<div class="PageBar__dot"></div>
+			<span class="stepTitle">
+				STEP 2
+			</span>
+			<span class="stepHeading">
+				Write A Note
+			</span>
+		</div>
+		<div class="PageBar__btn" @click="changeStep('PickRibbon')">
+			<div class="PageBar__dot"></div>
+			<span class="stepTitle">
+				STEP 3
+			</span>
+			<span class="stepHeading">
+				Pick Your Ribbon
+			</span>
+		</div>
+		<div class="PageBar__btn" @click="changeStep('Summary')">
+			<div class="PageBar__dot"></div>
+			<span class="stepTitle">
+				STEP 4
+			</span>
+			<span class="stepHeading">
+				See Your Gifts
+			</span>
+		</div>
 	</div>
 </template>
+
+<script type="text/javascript">
+	export default {
+		methods: {
+			changeStep(component){
+				this.$store.commit('switchComponent', component);
+			}
+		}
+	}
+</script>

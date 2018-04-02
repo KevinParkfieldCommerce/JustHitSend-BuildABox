@@ -1,5 +1,5 @@
 <template>
-	<div class="BuildSummary">
+	<div class="BuildSummary componentContainer">
 		<h1>WHAT'S IN YOUR GIFT</h1>
 		<p>Pick 3 items for $50, 4 items for $65 or 5 items for $75.</p>
 		<div class="BuildSummary__info">

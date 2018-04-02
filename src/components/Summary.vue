@@ -1,5 +1,5 @@
 <template>
-	<div class="Summary">
+	<div class="Summary componentContainer">
 		Summary
 	</div>
 </template>

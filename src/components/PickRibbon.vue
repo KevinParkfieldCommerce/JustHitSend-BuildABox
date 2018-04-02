@@ -1,5 +1,5 @@
 <template>
-	<div class="PickRibbon">
+	<div class="PickRibbon componentContainer">
 		Pick Ribbon
 	</div>
 </template>

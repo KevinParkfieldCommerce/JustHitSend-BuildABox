@@ -1,10 +1,12 @@
 <template>
-  <div class="BuildBox">
-  	<PageBar></PageBar>
-  	<keep-alive>
-  		<component :is="getSelectedComponent"></component>
-  	</keep-alive>
-  </div>
+	  <div class="BuildBox">
+	  	<PageBar></PageBar>
+	  	<div class="BuildBoxContainer">
+		  	<keep-alive>
+		  		<component :is="getSelectedComponent"></component>
+		  	</keep-alive>
+	  	</div>
+	  </div>
 </template>
 
 <script>

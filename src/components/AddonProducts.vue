@@ -1,5 +1,5 @@
 <template>
-	<div class="AddonProducts">
+	<div class="AddonProducts componentContainer">
 		<h1>SELECT FROM THESE ITEMS</h1>
 		<ul class="AddonProducts__list">
 			<li v-for="product in addonProducts" class="AddonProducts__addonProduct">

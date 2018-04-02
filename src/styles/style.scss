@@ -1,3 +1,5 @@
+$container-bg: #FBFBFB;
+$component-bg: #FFF;
 $border: #000;
 $item-border: #E6E6E6;
 $item-hover-border: #000;
@@ -7,13 +9,58 @@ $remove-btn: #000;
 $btn-text: #FFF;
 $empty-slot-text: #B2B2B2;
 $text: #000;
+$page-bar-text: #9E9E9E;
+$pagebar-dot: #F4F4F4;
 
 .BuildBox {
 	width: 100%;
-	max-width: 954px;
+	max-width: 1180px;
 	margin: 0 auto;
 	.heading {
 		text-align: center;
+		font-size: 20px;
+		padding: 41px 0 35px;
+		margin: 0;
+	}
+}
+
+.BuildBoxContainer {
+	background-color: $container-bg;
+}
+
+.componentContainer {
+	width: 100%;
+	max-width: 954px;
+	margin: 0 auto;
+	background-color: $component-bg;
+}
+
+.PageBar {
+	display: flex;
+	justify-content: space-around;
+	padding: 53px 0 62px;
+	&__btn {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		cursor: pointer;
+		.stepTitle {
+			color: $page-bar-text;
+			font-size: 15px;
+			letter-spacing: 4px;
+			margin-bottom: 3px;
+		}
+		.stepHeading {
+			color: $page-bar-text;
+			font-size: 14px;
+		}
+	}
+	&__dot {
+		height: 27px;
+		width: 27px;
+		border-radius: 50%;
+		margin-bottom: 22px;
+		background-color: $pagebar-dot;
 	}
 }
 

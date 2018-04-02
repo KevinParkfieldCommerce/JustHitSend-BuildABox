@@ -22,6 +22,9 @@ let mutations = {
 			return addon.id == payLoad.id;
 		});
 		state.selectedAddonProducts.splice(index, 1);
+	},
+	switchComponent(state, payLoad) {
+		state.selectedComponent = payLoad;
 	}
 };
 

@@ -1,5 +1,5 @@
 <template>
-	<div class="WriteMessage">
+	<div class="WriteMessage componentContainer">
 		message
 	</div>
 </template>
