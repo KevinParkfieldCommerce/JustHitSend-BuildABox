@@ -30,7 +30,7 @@
 		<div class="PageBar__btn" @click="changeStep('Summary')">
 			<div class="PageBar__dot"></div>
 			<span class="stepTitle">
-				STEP 4
+				ADD TO CART
 			</span>
 			<span class="stepHeading">
 				See Your Gifts

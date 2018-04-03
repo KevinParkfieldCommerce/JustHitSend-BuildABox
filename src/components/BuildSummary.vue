@@ -37,16 +37,16 @@
 	export default {
 		computed: {
 			getSelectedAddons() {
-				return this.$store.state.selectedAddonProducts;
-			},
-			getEmptySlots() {
-				return 5-this.$store.state.selectedAddonProducts.length;
+				return this.$store.getters.getSelectedAddonProducts;
 			},
 			getTotalPrice() {
 				return this.$store.getters.getMainProductPrice;
 			},
+			getEmptySlots() {
+				return 5-this.$store.state.selectedAddonProducts.length;
+			},
 			enableBtn() {
-				return this.$store.state.selectedAddonProducts.length >= 3
+				return this.$store.state.selectedAddonProducts.length >= 3;
 			}
 		},
 		methods: {

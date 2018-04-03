@@ -10,6 +10,12 @@ let getters = {
 			return 0;
 		}
 		return state.selectedMainProduct.price;
+	},
+	getRibbons(state) {
+		return state.ribbonProducts;
+	},
+	getSelectedRibbon(state) {
+		return state.selectedRibbon;
 	}
 };
 

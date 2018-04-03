@@ -9,10 +9,20 @@
 					<img src="../assets/logo.png">
 				</div>
 				<div class="WriteMessage__message">
-					<textarea placeholder="Type your message..."></textarea>
+					<textarea @input="enterMessage" placeholder="Type your message..."></textarea>
 					<button class="buildbox-btn active" @click="$store.commit('switchComponent', 'PickRibbon')">CONTINUE</button>
 				</div>
 			</div>
 		</div>
 	</div>
 </template>
+
+<script type="text/javascript">
+	export default {
+		methods: {
+			enterMessage(e) {
+				this.$store.commit('updateMessage', e.target.value);
+			}
+		}
+	}
+</script>

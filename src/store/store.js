@@ -14,7 +14,8 @@ const store = new Vuex.Store({
 		ribbonProducts: [],
 		selectedMainProduct: {},
 		selectedAddonProducts: [],
-		selectedRibbon: {} 	
+		selectedRibbon: {},
+		message: '' 	
 	},
 	getters,
 	mutations,

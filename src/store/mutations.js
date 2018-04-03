@@ -41,6 +41,12 @@ let mutations = {
 	},
 	switchComponent(state, payLoad) {
 		state.selectedComponent = payLoad;
+	},
+	updateMessage(state, payLoad) {
+		state.message = payLoad;
+	},
+	addSelectedRibbon(state, payLoad){
+		state.selectedRibbon = payLoad;
 	}
 };
 
