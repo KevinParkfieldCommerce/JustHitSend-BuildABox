@@ -26,6 +26,7 @@
 		methods: {
 			addProduct(product) {
 				this.$store.commit('addAddonProduct', product);
+				this.$store.commit('updateMainProductPrice');
 			}
 		}
 	}

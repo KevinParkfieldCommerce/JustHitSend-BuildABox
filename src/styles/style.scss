@@ -33,6 +33,33 @@ $pagebar-dot: #F4F4F4;
 	max-width: 954px;
 	margin: 0 auto;
 	background-color: $component-bg;
+	border: 1px solid $border;
+	box-sizing: border-box;
+	h1 {
+		text-align: center;
+		font-size: 15px;
+		margin: 45px 0 19px;
+		letter-spacing: 6.67px;
+	}
+	p {
+		text-align: center;
+		font-size: 16px;
+		letter-spacing: 2.57px;
+	}
+}
+
+.buildbox-btn {
+	height: 45px;
+	width: 147px;
+	background-color: $add-btn;
+	color: #fff;
+	font-size: 14px;
+	letter-spacing: 4px;
+	border: none;
+	cursor: pointer;
+}
+.buildbox-btn.active {
+	background-color: #000;
 }
 
 .PageBar {
@@ -53,6 +80,7 @@ $pagebar-dot: #F4F4F4;
 		.stepHeading {
 			color: $page-bar-text;
 			font-size: 14px;
+			letter-spacing: 2px;
 		}
 	}
 	&__dot {
@@ -65,10 +93,7 @@ $pagebar-dot: #F4F4F4;
 }
 
 .AddonProducts {
-	border: 1px solid $border;
 	h1 {
-		text-align: center;
-		font-size: 15px;
 		margin: 43px 0 31px;
 	}
 	&__list {
@@ -143,17 +168,9 @@ $pagebar-dot: #F4F4F4;
 }
 
 .BuildSummary {
-	border: 1px solid $border;
 	margin-bottom: 22px;
-	h1 {
-		text-align: center;
-		font-size: 15px;
-		margin: 45px 0 19px;
-	}
 	p {
-		text-align: center;
-		font-size: 16px;
-		margin: 0 0 52px;
+		margin-bottom: 52px;
 	}
 	&__info {
 		display: flex;
@@ -165,6 +182,31 @@ $pagebar-dot: #F4F4F4;
 		justify-content: space-between;
 		padding: 0;
 		margin: 0;
+		position: relative;
+		&:after {
+			content: "";
+			position: absolute;
+			right: 0;
+			top: 0;
+			width: 2px;
+			height: 90%;
+			background-color: $item-border;
+		}
+	}
+	&__total {
+		display: flex;
+		flex-direction: column;		
+		padding: 33px 32px;
+		p {
+			font-size: 15px;
+			font-weight: bold;
+			letter-spacing: 2.5px;
+			text-align: left;
+			margin: 0 0 15px;
+		}
+		.next-btn {
+			margin-top: auto;
+		}
 	}
 	&__addonProduct {
 		width: 20%;
@@ -236,6 +278,54 @@ $pagebar-dot: #F4F4F4;
 			font-size: 12px;
 			letter-spacing: 1.43px;
 			color: $empty-slot-text;
+		}
+	}
+}
+
+.WriteMessage {
+	.componentContainer {
+		padding: 0 56px 44px 47px;
+	}
+	p {
+		margin: 0 0 41px;
+	}
+	&__content {
+		display: flex;
+	}
+	&__card {
+		width: 50%;
+		height: 377px;
+		border: 1px solid $item-border;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		margin-right: 25px;
+	}
+	&__message {
+		width: 50%;
+		height: 377px;
+		padding-left: 25px;
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		&:after {
+			content: "";
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 1px;
+			height: 100%;
+			background-color: $item-border;
+		}
+		textarea {
+			height: 81%;
+			padding: 17px 27px;
+			box-sizing: border-box;
+			border: 1px solid $item-border;
+			resize: none;
+		}
+		button {
+			margin: auto 0 0 auto;
 		}
 	}
 }

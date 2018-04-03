@@ -19,6 +19,16 @@
 					</div>		
 				</li>
 			</ul>
+			<div class="BuildSummary__total">
+				<p>Items: {{ $store.state.selectedAddonProducts.length }}</p>
+				<p>Sub Total: ${{ getTotalPrice }}</p>
+				<div v-if="enableBtn" class="next-btn">
+					<button class="buildbox-btn active" @click="$store.commit('switchComponent', 'WriteMessage')">CONTINUE</button>
+				</div>
+				<div v-else class="next-btn">
+					<button class="buildbox-btn" disabled>CONTINUE</button>
+				</div>
+			</div>
 		</div>
 	</div>
 </template>
@@ -31,11 +41,18 @@
 			},
 			getEmptySlots() {
 				return 5-this.$store.state.selectedAddonProducts.length;
+			},
+			getTotalPrice() {
+				return this.$store.getters.getMainProductPrice;
+			},
+			enableBtn() {
+				return this.$store.state.selectedAddonProducts.length >= 3
 			}
 		},
 		methods: {
 			removeAddon(product){
 				this.$store.commit('removeSelectedAddon', product);
+				this.$store.commit('updateMainProductPrice');
 			}
 		}
 	}
