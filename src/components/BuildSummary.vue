@@ -46,7 +46,13 @@
 				return 5-this.$store.state.selectedAddonProducts.length;
 			},
 			enableBtn() {
-				return this.$store.state.selectedAddonProducts.length >= 3;
+				if (this.$store.state.selectedAddonProducts.length >= 3) {
+					//this.$store.commit('enableStep');
+					this.$store.state.enableSteps.writeMessage = true;
+					return true;
+				} else {
+					return false;
+				}
 			}
 		},
 		methods: {

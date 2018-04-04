@@ -10,7 +10,12 @@
 				</div>
 				<div class="WriteMessage__message">
 					<textarea @input="enterMessage" placeholder="Type your message..."></textarea>
-					<button class="buildbox-btn active" @click="$store.commit('switchComponent', 'PickRibbon')">CONTINUE</button>
+					<div v-if="enableBtn" class="next-btn">
+						<button class="buildbox-btn active" @click="$store.commit('switchComponent', 'PickRibbon')">CONTINUE</button>
+					</div>
+					<div v-else class="next-btn">
+						<button class="buildbox-btn" disabled>CONTINUE</button>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -19,6 +24,11 @@
 
 <script type="text/javascript">
 	export default {
+		computed: {
+			enableBtn() {
+				return  this.$store.getters.getMessage.length > 0;
+			}
+		},
 		methods: {
 			enterMessage(e) {
 				this.$store.commit('updateMessage', e.target.value);

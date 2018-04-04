@@ -1,6 +1,6 @@
 <template>
 	<div class="PageBar">
-		<div class="PageBar__btn" @click="changeStep('SelectItems')">
+		<div class="PageBar__btn" @click="changeStep('SelectItems', $store.state.enableSteps.selectItems)">
 			<div class="PageBar__dot"></div>
 			<span class="stepTitle">
 				STEP 1
@@ -9,7 +9,7 @@
 				Choose Your Items
 			</span>
 		</div>
-		<div class="PageBar__btn" @click="changeStep('WriteMessage')">
+		<div class="PageBar__btn" @click="changeStep('WriteMessage', $store.state.enableSteps.writeMessage)">
 			<div class="PageBar__dot"></div>
 			<span class="stepTitle">
 				STEP 2
@@ -18,7 +18,7 @@
 				Write A Note
 			</span>
 		</div>
-		<div class="PageBar__btn" @click="changeStep('PickRibbon')">
+		<div class="PageBar__btn" @click="changeStep('PickRibbon', $store.state.enableSteps.pickRibbon)">
 			<div class="PageBar__dot"></div>
 			<span class="stepTitle">
 				STEP 3
@@ -27,7 +27,7 @@
 				Pick Your Ribbon
 			</span>
 		</div>
-		<div class="PageBar__btn" @click="changeStep('Summary')">
+		<div class="PageBar__btn" @click="changeStep('Summary', $store.state.enableSteps.addToCart)">
 			<div class="PageBar__dot"></div>
 			<span class="stepTitle">
 				ADD TO CART
@@ -42,8 +42,10 @@
 <script type="text/javascript">
 	export default {
 		methods: {
-			changeStep(component){
-				this.$store.commit('switchComponent', component);
+			changeStep(component, stateCondition){
+				if (stateCondition) {
+					this.$store.commit('switchComponent', component);
+				}
 			}
 		}
 	}

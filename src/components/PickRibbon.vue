@@ -8,7 +8,12 @@
 					<img :src="ribbon.images[0].src">
 				</li>
 			</ul>
-			<button class="buildbox-btn active" @click="$store.commit('switchComponent', 'Summary')">CONTINUE</button>
+			<div v-if="enableBtn" class="next-btn">
+				<button class="buildbox-btn active" @click="$store.commit('switchComponent', 'Summary')">CONTINUE</button>
+			</div>
+			<div v-else class="next-btn">
+				<button class="buildbox-btn" disabled>CONTINUE</button>
+			</div>
 		</div>
 	</div>
 </template>
@@ -21,6 +26,9 @@
 			},
 			selectedRibbon() {
 				return this.$store.getters.getSelectedRibbon;
+			},
+			enableBtn() {
+				return this.$store.getters.getSelectedRibbon.hasOwnProperty('id'); 
 			}
 		},
 		methods: {

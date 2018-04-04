@@ -16,6 +16,9 @@ let getters = {
 	},
 	getSelectedRibbon(state) {
 		return state.selectedRibbon;
+	},
+	getMessage(state) {
+		return state.message;
 	}
 };
 
