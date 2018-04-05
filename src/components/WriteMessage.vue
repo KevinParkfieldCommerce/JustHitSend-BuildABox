@@ -26,16 +26,7 @@
 	export default {
 		computed: {
 			enableBtn() {
-				// this.$store.commit('enableSteps');
 				return this.$store.getters.getMessage.length > 0;
-				// if (this.$store.getters.getMessage.length > 0){
-				// 	this.$store.state.enableSteps.pickRibbon = true;
-				// 	return true;
-				// } else {
-				// 	this.$store.state.enableSteps.pickRibbon = false;
-				// 	this.$store.state.enableSteps.addToCart = false;
-				// 	return false;
-				// }
 			}
 		},
 		methods: {

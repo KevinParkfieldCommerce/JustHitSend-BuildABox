@@ -5,6 +5,9 @@ let getters = {
 	getSelectedAddonProducts(state) {
 		return state.selectedAddonProducts;
 	},
+	getMainProduct(state) {
+		return state.mainProduct;
+	},
 	getMainProductPrice(state) {
 		if (Object.keys(state.selectedMainProduct).length === 0) {
 			return 0;

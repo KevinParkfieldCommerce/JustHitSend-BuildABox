@@ -20,9 +20,6 @@
 		computed: {
 			getSelectedComponent() {
 				return this.$store.state.selectedComponent;
-			},
-			getState() {
-				return this.$store.state.enableSteps;
 			}
 		},
 		components: {
