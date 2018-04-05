@@ -15,13 +15,7 @@ const store = new Vuex.Store({
 		selectedMainProduct: {},
 		selectedAddonProducts: [],
 		selectedRibbon: {},
-		message: '',
-		enableSteps: {
-			selectItems: true,
-			writeMessage: false,
-			pickRibbon: false,
-			addToCart: false
-		} 	
+		message: ''
 	},
 	getters,
 	mutations,

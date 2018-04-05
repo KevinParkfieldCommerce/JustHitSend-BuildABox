@@ -12,6 +12,7 @@ $text: #000;
 $page-bar-text: #9E9E9E;
 $page-bar-line: #979797;
 $pagebar-dot: #F4F4F4;
+$pagebar-dot-active: #494949;
 
 .BuildBox {
 	width: 100%;
@@ -80,11 +81,13 @@ $pagebar-dot: #F4F4F4;
 			font-size: 15px;
 			letter-spacing: 4px;
 			margin-bottom: 3px;
+			transition: color 0.3s;
 		}
 		.stepHeading {
 			color: $page-bar-text;
 			font-size: 14px;
 			letter-spacing: 2px;
+			transition: color 0.3s;
 		}
 		&:after {
 			content: "";
@@ -95,6 +98,14 @@ $pagebar-dot: #F4F4F4;
 			width: 100%;
 			background-color: $page-bar-line;
 		}
+		&:hover {
+			.PageBar__dot {
+				background-color: $pagebar-dot-active;
+			}
+			.stepTitle, .stepHeading {
+				color: #000;
+			}			
+		}
 	}
 	&__dot {
 		height: 27px;
@@ -103,6 +114,15 @@ $pagebar-dot: #F4F4F4;
 		margin-bottom: 22px;
 		background-color: $pagebar-dot;
 		z-index: 1;
+		transition: background-color 0.3s;
+	}
+	&__btn.active {
+		.PageBar__dot {
+			background-color: $pagebar-dot-active;
+		}
+		.stepTitle, .stepHeading {
+			color: #000;
+		}
 	}
 }
 

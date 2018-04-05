@@ -45,7 +45,7 @@ let mutations = {
 	updateMessage(state, payLoad) {
 		state.message = payLoad;
 	},
-	addSelectedRibbon(state, payLoad){
+	addSelectedRibbon(state, payLoad) {
 		state.selectedRibbon = payLoad;
 	}
 };

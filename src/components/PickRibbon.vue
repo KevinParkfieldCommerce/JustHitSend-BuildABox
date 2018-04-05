@@ -28,7 +28,7 @@
 				return this.$store.getters.getSelectedRibbon;
 			},
 			enableBtn() {
-				return this.$store.getters.getSelectedRibbon.hasOwnProperty('id'); 
+				return this.$store.getters.getSelectedRibbon.hasOwnProperty('id');
 			}
 		},
 		methods: {
