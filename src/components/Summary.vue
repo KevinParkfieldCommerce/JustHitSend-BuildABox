@@ -28,7 +28,7 @@
 					</ul>
 					<div class="Summary__total">
 						<span>SUB TOTAL: ${{ getMainProductPrice }}</span>
-						<button class="buildbox-btn active">ADD TO CART</button>
+						<button @click="addToCart" class="buildbox-btn active">ADD TO CART</button>
 					</div>	
 				</div>
 			</div>
@@ -37,9 +37,15 @@
 </template>
 
 <script type="text/javascript">
+	import axios from 'axios'
 	import { mapGetters } from 'vuex'
 
 	export default {
+		data() {
+			return {
+				isAdding: false
+			};
+		},
 		computed: {
 			...mapGetters([
 				'getMainProduct',
@@ -60,6 +66,62 @@
 				});
 				return productList;
 			}
+		},
+		methods: {
+			addToCart() {
+				let mainProduct = this.$store.getters.getSelectedMainProduct;
+				let addonProducts = this.$store.getters.getSelectedAddonProducts;
+				let ribbon = this.$store.getters.getSelectedRibbon;
+				let cartQueue = [];
+				let boxKey = (Math.floor(Math.random() * 1000) + 1).toString();
+
+				function ajaxAdd(queue){
+					if (queue.length > 0){
+						let currentItem = queue.pop();
+						axios.post('/cart/add.js', currentItem)
+						.then(response => {
+							ajaxAdd(queue);
+						})
+						.catch(err => {
+							console.log(err);
+						});
+						} else {
+							window.location.href = '/cart';
+						}
+					}
+					cartQueue.push({
+						id:mainProduct.id,
+						quantity: 1,
+						properties: {
+							'BoxNum': boxKey
+						}
+					});
+					let combinedAddons = {};
+					addonProducts.forEach(addon => {
+						if (combinedAddons.hasOwnProperty(addon.id)) {
+							combinedAddons[addon.id] = combinedAddons[addon.id] + 1;
+						} else {
+							combinedAddons[addon.id] = 1;
+						}
+					});
+					Object.keys(combinedAddons).forEach(key => {
+						cartQueue.push({
+							id: key,
+							quantity: combinedAddons[key],
+							properties: {
+								'BoxNum': boxKey
+							}
+						});
+					});
+					cartQueue.push({
+						id: ribbon.id,
+						quantity: 1,
+						properties: {
+							'BoxNum': boxKey
+						}
+					});
+					ajaxAdd(cartQueue);
+				}
+			}
 		}
-	}
 </script>

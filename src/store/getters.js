@@ -44,6 +44,9 @@ let getters = {
 	},
 	getMessage(state) {
 		return state.message;
+	},
+	getSelectedMainProduct(state) {
+		return state.selectedMainProduct;
 	}
 };
 
