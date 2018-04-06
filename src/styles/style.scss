@@ -29,6 +29,8 @@ $pagebar-dot-active: #494949;
 
 .BuildBoxContainer {
 	background-color: $container-bg;
+	padding-bottom: 100px;
+	margin-bottom: 50px;
 }
 
 .componentContainer {
@@ -126,9 +128,26 @@ $pagebar-dot-active: #494949;
 	}
 }
 
+.ProductFilter {
+	display: inline-block;
+	width: 25%;
+	select {
+		width: 188px;
+		height: 35px;
+	}
+}
+
+.AddonProducts.componentContainer {
+	padding: 0 35px;
+}
+
 .AddonProducts {
 	h1 {
 		margin: 43px 0 31px;
+	}
+	.Filters {
+		margin-left: 17px;
+		padding-bottom: 36px;
 	}
 	&__list {
 		list-style: none;

@@ -20,6 +20,9 @@
 		computed: {
 			getSelectedComponent() {
 				return this.$store.state.selectedComponent;
+			},
+			filters() {
+				return this.$store.state.selectedFilters;
 			}
 		},
 		components: {

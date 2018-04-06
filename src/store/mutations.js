@@ -47,6 +47,19 @@ let mutations = {
 	},
 	addSelectedRibbon(state, payLoad) {
 		state.selectedRibbon = payLoad;
+	},
+	updateFilters(state, payLoad) {
+		let category = payLoad.split('_').shift();
+		let existingIndex = state.selectedFilters.findIndex(filter => {
+			return filter.indexOf(category) > -1;
+		});
+		if(existingIndex > -1) {
+			state.selectedFilters.splice(existingIndex, 1);
+		}
+		state.selectedFilters.push(payLoad);
+	},
+	clearFilters(state) {
+		state.selectFilters = [];
 	}
 };
 

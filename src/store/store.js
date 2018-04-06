@@ -15,7 +15,8 @@ const store = new Vuex.Store({
 		selectedMainProduct: {},
 		selectedAddonProducts: [],
 		selectedRibbon: {},
-		message: ''
+		message: '',
+		selectedFilters: []
 	},
 	getters,
 	mutations,
