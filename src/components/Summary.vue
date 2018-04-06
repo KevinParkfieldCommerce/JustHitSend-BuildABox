@@ -98,15 +98,16 @@
 					});
 					let combinedAddons = {};
 					addonProducts.forEach(addon => {
-						if (combinedAddons.hasOwnProperty(addon.id)) {
-							combinedAddons[addon.id] = combinedAddons[addon.id] + 1;
+						addon = addon.variants[0].id;
+						if (combinedAddons.hasOwnProperty(addon)) {
+							combinedAddons[addon] = combinedAddons[addon] + 1;
 						} else {
-							combinedAddons[addon.id] = 1;
+							combinedAddons[addon] = 1;
 						}
 					});
 					Object.keys(combinedAddons).forEach(key => {
 						cartQueue.push({
-							id: key,
+							id: parseInt(key),
 							quantity: combinedAddons[key],
 							properties: {
 								'BoxNum': boxKey
@@ -114,12 +115,13 @@
 						});
 					});
 					cartQueue.push({
-						id: ribbon.id,
+						id: ribbon.variants[0].id,
 						quantity: 1,
 						properties: {
 							'BoxNum': boxKey
 						}
 					});
+					console.log(cartQueue);
 					ajaxAdd(cartQueue);
 				}
 			}
