@@ -10,6 +10,9 @@ let mutations = {
 			case 'Ribbon':
 				state.ribbonProducts.push(payLoad);
 				break;
+			case 'Card':
+				state.card = payLoad;
+				break;
 		}
 	},
 	addAddonProduct(state, payLoad) {

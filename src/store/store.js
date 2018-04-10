@@ -12,6 +12,7 @@ const store = new Vuex.Store({
 		mainProduct: {},
 		addonProducts: [],
 		ribbonProducts: [],
+		card: {},
 		selectedMainProduct: {},
 		selectedAddonProducts: [],
 		selectedRibbon: {},

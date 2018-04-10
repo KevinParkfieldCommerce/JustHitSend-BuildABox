@@ -1,7 +1,7 @@
 <template>
 	<div class="PageBar">
 		<div class="PageBar__btn" 
-		:class="$store.state.selectedComponent == 'SelectItems' ? 'active' : '' " 
+		:class="$store.state.selectedComponent == 'SelectItems' ? 'activeStep' : '' " 
 		@click="changeStep('SelectItems')">
 			<div class="PageBar__dot"></div>
 			<span class="stepTitle">
@@ -12,7 +12,7 @@
 			</span>
 		</div>
 		<div class="PageBar__btn" 
-		:class="$store.state.selectedComponent == 'WriteMessage' ? 'active' : '' " 
+		:class="$store.state.selectedComponent == 'WriteMessage' ? 'activeStep' : '' " 
 		@click="changeStep('WriteMessage')">
 			<div class="PageBar__dot"></div>
 			<span class="stepTitle">
@@ -23,7 +23,7 @@
 			</span>
 		</div>
 		<div class="PageBar__btn" 
-		:class="$store.state.selectedComponent == 'PickRibbon' ? 'active' : '' " 
+		:class="$store.state.selectedComponent == 'PickRibbon' ? 'activeStep' : '' " 
 		@click="changeStep('PickRibbon')">
 			<div class="PageBar__dot"></div>
 			<span class="stepTitle">
@@ -34,7 +34,7 @@
 			</span>
 		</div>
 		<div class="PageBar__btn" 
-		:class="$store.state.selectedComponent == 'Summary' ? 'active' : '' " 
+		:class="$store.state.selectedComponent == 'Summary' ? 'activeStep' : '' " 
 		@click="changeStep('Summary')">
 			<div class="PageBar__dot"></div>
 			<span class="stepTitle">

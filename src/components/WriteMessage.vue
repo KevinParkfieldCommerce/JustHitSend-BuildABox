@@ -6,7 +6,7 @@
 			<p>Pick your card and customize your message.</p>
 			<div class="WriteMessage__content">
 				<div class="WriteMessage__card">
-					<img src="../assets/logo.png">
+					<img :src="$store.getters.getCardImage">
 				</div>
 				<div class="WriteMessage__message">
 					<textarea @input="enterMessage" placeholder="Type your message..."></textarea>

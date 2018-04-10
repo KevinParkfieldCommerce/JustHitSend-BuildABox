@@ -14,16 +14,27 @@ $page-bar-line: #979797;
 $pagebar-dot: #F4F4F4;
 $pagebar-dot-active: #494949;
 
+@font-face {
+	font-family: 'Futura';
+	src: url('../assets/Futura-Condensed.otf');
+}
+@font-face {
+	font-family: 'Brandon';
+	src: url('../assets/Brandon_reg.otf');
+}
+
 .BuildBox {
 	width: 100%;
 	max-width: 1180px;
 	margin: 0 auto;
 	.heading {
+		font-family: 'Futura';
 		text-align: center;
 		font-size: 20px;
 		font-weight: normal;
 		padding: 41px 0 35px;
 		margin: 0;
+		letter-spacing: 5px;
 	}
 }
 
@@ -41,6 +52,7 @@ $pagebar-dot-active: #494949;
 	border: 1px solid $border;
 	box-sizing: border-box;
 	h1 {
+		font-family: 'Futura';
 		text-align: center;
 		font-size: 15px;
 		font-weight: normal;
@@ -48,6 +60,7 @@ $pagebar-dot-active: #494949;
 		letter-spacing: 6.67px;
 	}
 	p {
+		font-family: "Brandon";
 		text-align: center;
 		font-size: 18px;
 		letter-spacing: 2.57px;
@@ -59,6 +72,7 @@ $pagebar-dot-active: #494949;
 	width: 147px;
 	background-color: $add-btn;
 	color: #fff;
+	font-family: 'Futura';
 	font-size: 14px;
 	letter-spacing: 4px;
 	border: none;
@@ -79,6 +93,7 @@ $pagebar-dot-active: #494949;
 		cursor: pointer;
 		position: relative;
 		.stepTitle {
+			font-family: 'Futura';
 			color: $page-bar-text;
 			font-size: 15px;
 			letter-spacing: 4px;
@@ -86,6 +101,7 @@ $pagebar-dot-active: #494949;
 			transition: color 0.3s;
 		}
 		.stepHeading {
+			font-family: 'Brandon';
 			color: $page-bar-text;
 			font-size: 14px;
 			letter-spacing: 2px;
@@ -118,7 +134,7 @@ $pagebar-dot-active: #494949;
 		z-index: 1;
 		transition: background-color 0.3s;
 	}
-	&__btn.active {
+	&__btn.activeStep {
 		.PageBar__dot {
 			background-color: $pagebar-dot-active;
 		}
@@ -131,9 +147,43 @@ $pagebar-dot-active: #494949;
 .ProductFilter {
 	display: inline-block;
 	width: 25%;
+	position: relative;
 	select {
+		font-family: 'Brandon';
+		font-size: 12px;
+		letter-spacing: 1.71px;
+		color: #727272;
+		border: 1px solid #E6E6E6;
 		width: 188px;
 		height: 35px;
+		-webkit-appearance: none;
+	    -moz-appearance: none;
+	    text-indent: 1px;
+	    text-overflow: '';
+	    padding-left: 20px;
+	    option {
+	    	padding-left: 20px;
+	    }
+	}
+	&:before {
+		content: "";
+		position: absolute;
+		background-color: #1B1A19;
+		height: 2px;
+		width: 9px;
+		right: 42px;
+		bottom: 14px;
+		transform: rotate(45deg);
+	}
+	&:after {
+		content: "";
+		position: absolute;
+		background-color: #1B1A19;
+		height: 2px;
+		width: 9px;
+		right: 37px;
+		bottom: 14px;
+		transform: rotate(-45deg);
 	}
 }
 
@@ -152,7 +202,6 @@ $pagebar-dot-active: #494949;
 	&__list {
 		list-style: none;
 		display: flex;
-		justify-content: space-between;
 		flex-flow: row wrap;
 		padding: 0;
 		margin: 0;
@@ -160,6 +209,7 @@ $pagebar-dot-active: #494949;
 	&__addonProduct {
 		width: 25%;
 		span {
+			font-family: 'Brandon';
 			display: block;
 			text-align: center;
 			font-size: 14px;
@@ -202,6 +252,7 @@ $pagebar-dot-active: #494949;
 		opacity: 0;
 		transition: opacity 0.3s;
 		button {
+			font-family: 'Futura';
 			height: 45px;
 			width: 130px;
 			margin-bottom: 5px;
@@ -236,6 +287,7 @@ $pagebar-dot-active: #494949;
 		padding: 0;
 		margin: 0;
 		position: relative;
+		padding: 0 32px;
 		&:after {
 			content: "";
 			position: absolute;
@@ -264,6 +316,7 @@ $pagebar-dot-active: #494949;
 	&__addonProduct {
 		width: 20%;
 		span {
+			font-family: 'Brandon';
 			display: block;
 			text-align: center;
 			font-size: 10px;
@@ -306,6 +359,7 @@ $pagebar-dot-active: #494949;
 		opacity: 0;
 		transition: opacity 0.3s;
 		button {
+			font-family: 'Futura';
 			height: 45px;
 			width: 72px;
 			color: $btn-text;
@@ -313,6 +367,7 @@ $pagebar-dot-active: #494949;
 			cursor: pointer;
 			background-color: $remove-btn;
 			font-size: 12px;
+			letter-spacing: 4px;
 		}
 	}
 	&__emptySlotWrapper {
@@ -328,6 +383,7 @@ $pagebar-dot-active: #494949;
 		border: 1px solid $item-border;
 		margin: 0 auto 108px;
 		span {
+			font-family: 'Brandon';
 			font-size: 12px;
 			letter-spacing: 1.43px;
 			color: $empty-slot-text;
@@ -371,6 +427,8 @@ $pagebar-dot-active: #494949;
 			background-color: $item-border;
 		}
 		textarea {
+			font-family: 'Brandon';
+			letter-spacing: 2.5px;
 			height: 81%;
 			padding: 17px 27px;
 			box-sizing: border-box;
@@ -457,13 +515,16 @@ $pagebar-dot-active: #494949;
 			border: 1px solid $item-border;
 			list-style: none;
 			li {
+				font-family: 'Brandon';
 				font-size: 14px;
 				line-height: 25px;
+				letter-spacing: 2px;
 			}
 			span {
 				padding-right: 15px;
 			}
 			.title {
+				font-family: 'Futura';
 				margin-bottom: 36px;
 			}
 			.messageTitle {
@@ -477,6 +538,7 @@ $pagebar-dot-active: #494949;
 		justify-content: space-between;
 		padding-top: 39px;
 		span {
+			font-family: 'Futura';
 			font-size: 16px;
 			letter-spacing: 5.14px;
 			color: #979797;

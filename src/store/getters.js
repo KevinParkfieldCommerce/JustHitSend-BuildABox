@@ -47,6 +47,9 @@ let getters = {
 	},
 	getSelectedMainProduct(state) {
 		return state.selectedMainProduct;
+	},
+	getCardImage(state) {
+		return state.card.images[0].src;
 	}
 };
 

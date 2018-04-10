@@ -10,7 +10,7 @@
 						<img :src="getMainProduct.images[0].src">
 					</li>
 					<li>
-						<img src="../assets/logo.png">
+						<img :src="getCardImage">
 					</li>
 					<li v-for="product in getSelectedAddonProducts">
 						<img :src="product.images[0].src">
@@ -51,7 +51,8 @@
 				'getMainProduct',
 				'getMainProductPrice',
 				'getSelectedAddonProducts',
-				'getMessage'
+				'getMessage',
+				'getCardImage'
 			]),
 			listAddons() {
 				let productList = {};
