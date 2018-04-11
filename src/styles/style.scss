@@ -271,6 +271,72 @@ $pagebar-dot-active: #494949;
 	}
 }
 
+.QuickView {
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	background-color: rgba(0,0,0,0.5);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	&__content {
+		width: 100%;
+		max-width: 761px;
+		background-color: #fff;
+		display: flex;
+		position: relative;
+		padding: 30px;
+		box-sizing: border-box;
+	}
+	&__close {
+		position: absolute;
+		right: 0;
+		top: 0;
+		width: 30px;
+		height: 30px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		cursor: pointer;
+		background-color: #000;
+		svg {
+			font-size: 15px;
+			path {
+				fill: #fff;
+			}
+		}
+	}
+	&__image {
+		width: 50%;
+		padding-right: 30px;
+		img {
+			width: 100%;
+		}
+	}
+	&__info {
+		width: 50%;
+		h2 {
+			font-family: 'Futura';
+			font-weight: normal;
+			letter-spacing: 5px;
+			font-size: 20px;
+		}
+		h3 {
+			font-size: 17px;
+		}
+		button {
+			width: 100%;
+		}
+		p {
+			text-align: left;
+			border-top: 1px solid #E5E5E5;
+			padding-top: 10px;
+		}
+	}
+}
+
 .BuildSummary {
 	margin-bottom: 22px;
 	p {
@@ -498,6 +564,9 @@ $pagebar-dot-active: #494949;
 			width: 170px;
 			border: 1px solid $item-border;
 			margin: 0 26px 26px 0;
+			display: flex;
+			justify-content: center;
+			align-items: center;
 			img {
 				max-width: 100%;
 				max-height: 100%;

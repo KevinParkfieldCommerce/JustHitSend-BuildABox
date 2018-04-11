@@ -9,13 +9,29 @@
 				<div class="AddonProducts__wrapper">
 					<div class="AddonProducts__overlay">
 						<button @click="addProduct(product)">ADD TO GIFT</button>
-						<button>QUICK VIEW</button>
+						<button @click="quickView(product)">QUICK VIEW</button>
 					</div>
 					<img :src="product.images[0].src">
 				</div>
 				<span>{{ product.title }}</span>
 			</li>
 		</ul>
+		<div v-if="showQuickView" class="QuickView">
+			<div class="QuickView__content">
+				<div @click="showQuickView = false" class="QuickView__close">
+					<i class="fas fa-times"></i>
+				</div>
+				<div class="QuickView__image">
+					<img :src="quickViewProduct.images[0].src">
+				</div>
+				<div class="QuickView__info">
+					<h2>{{ quickViewProduct.title }}</h2>
+					<h3>{{ quickViewProduct.vendor }}</h3>
+					<button @click="addProduct(quickViewProduct)" class="buildbox-btn active">ADD TO GIFT</button>
+					<p>{{ quickViewProduct.body_html }}</p>
+				</div>
+			</div>
+		</div>
 	</div>
 </template>
 
@@ -23,6 +39,12 @@
 	import ProductFilter from '../components/ProductFilter.vue'
 
 	export default {
+		data() {
+			return {
+				showQuickView: false,
+				quickViewProduct: {}
+			};
+		},
 		computed: {
 			addonProducts() {
 				return this.$store.getters.getAddonProducts;
@@ -45,6 +67,10 @@
 					tags = [...tags, ...tagsToAdd];
 				}
 				return tags; 
+			},
+			quickView(product) {
+				this.showQuickView = true;
+				this.quickViewProduct = product;
 			}
 		},
 		components: {
