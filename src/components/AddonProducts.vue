@@ -19,7 +19,7 @@
 		<div v-if="showQuickView" class="QuickView">
 			<div class="QuickView__content">
 				<div @click="showQuickView = false" class="QuickView__close">
-					<i class="fas fa-times"></i>
+						&#10005;
 				</div>
 				<div class="QuickView__image">
 					<img :src="quickViewProduct.images[0].src">
