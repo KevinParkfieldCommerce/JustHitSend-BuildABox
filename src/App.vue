@@ -13,7 +13,6 @@
 	import PageBar from './components/PageBar.vue'
 	import SelectItems from './components/SelectItems.vue'
 	import WriteMessage from './components/WriteMessage.vue'
-	import PickRibbon from './components/PickRibbon.vue'
 	import Summary from './components/Summary.vue'
 
 	export default {
@@ -29,7 +28,6 @@
 			PageBar,
 			SelectItems,
 			WriteMessage,
-			PickRibbon,
 			Summary
 		}
 	}

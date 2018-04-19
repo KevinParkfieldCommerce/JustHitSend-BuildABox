@@ -86,7 +86,7 @@ $pagebar-dot-active: #494949;
 	display: flex;
 	padding: 53px 0 62px;
 	&__btn {
-		width: 25%;
+		width: 33.33%;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
@@ -172,7 +172,7 @@ $pagebar-dot-active: #494949;
 		height: 2px;
 		width: 9px;
 		right: 42px;
-		bottom: 14px;
+		bottom: 35px;
 		transform: rotate(45deg);
 	}
 	&:after {
@@ -182,7 +182,7 @@ $pagebar-dot-active: #494949;
 		height: 2px;
 		width: 9px;
 		right: 37px;
-		bottom: 14px;
+		bottom: 35px;
 		transform: rotate(-45deg);
 	}
 }
@@ -507,40 +507,6 @@ $pagebar-dot-active: #494949;
 		.next-btn {
 			margin: auto 0 0 auto;
 		}
-	}
-}
-
-.PickRibbon {
-	p {
-		margin: 46px 0 41px;
-	}
-	&__list {
-		display: flex;
-		justify-content: center;
-		list-style: none;
-		padding: 0;
-		margin: 0;
-	}
-	&__ribbon {
-		height: 170px;
-		width: 170px;
-		border: 1px solid $item-border;
-		margin: 0 15px;
-		cursor: pointer;
-		transition: border-color 0.3s;
-		img {
-			max-width: 100%;
-			max-height: 100%;
-			display: block;
-			margin: 0 auto;
-		}
-	}
-	&__ribbon.active {
-		border-color: #000;
-	}
-	button {
-		display: block;
-		margin: 38px auto 44px;
 	}
 }
 

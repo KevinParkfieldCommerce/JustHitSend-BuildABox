@@ -7,9 +7,6 @@ let mutations = {
 			case 'Addon':
 				state.addonProducts.push(payLoad);
 				break;
-			case 'Ribbon':
-				state.ribbonProducts.push(payLoad);
-				break;
 			case 'Card':
 				state.card = payLoad;
 				break;
@@ -47,9 +44,6 @@ let mutations = {
 	},
 	updateMessage(state, payLoad) {
 		state.message = payLoad;
-	},
-	addSelectedRibbon(state, payLoad) {
-		state.selectedRibbon = payLoad;
 	},
 	updateFilters(state, payLoad) {
 		let category = payLoad.split('_').shift();

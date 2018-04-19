@@ -11,11 +11,9 @@ const store = new Vuex.Store({
 		selectedComponent: 'SelectItems',
 		mainProduct: {},
 		addonProducts: [],
-		ribbonProducts: [],
 		card: {},
 		selectedMainProduct: {},
 		selectedAddonProducts: [],
-		selectedRibbon: {},
 		message: '',
 		selectedFilters: []
 	},

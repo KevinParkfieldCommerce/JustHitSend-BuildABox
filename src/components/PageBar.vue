@@ -23,17 +23,6 @@
 			</span>
 		</div>
 		<div class="PageBar__btn" 
-		:class="$store.state.selectedComponent == 'PickRibbon' ? 'activeStep' : '' " 
-		@click="changeStep('PickRibbon')">
-			<div class="PageBar__dot"></div>
-			<span class="stepTitle">
-				STEP 3
-			</span>
-			<span class="stepHeading">
-				Pick Your Ribbon
-			</span>
-		</div>
-		<div class="PageBar__btn" 
 		:class="$store.state.selectedComponent == 'Summary' ? 'activeStep' : '' " 
 		@click="changeStep('Summary')">
 			<div class="PageBar__dot"></div>
@@ -60,13 +49,8 @@
 						this.$store.commit('switchComponent', component);	
 						}
 						break;
-					case 'PickRibbon':
-						if (this.$store.getters.getMessage.length > 0 && this.$store.state.selectedAddonProducts.length >= 3) {
-						this.$store.commit('switchComponent', component);	
-						}
-						break;
 					case 'Summary':
-						if (this.$store.getters.getSelectedRibbon.hasOwnProperty('id') && this.$store.getters.getMessage.length > 0 && this.$store.state.selectedAddonProducts.length >= 3) {
+						if (this.$store.getters.getMessage.length > 0 && this.$store.state.selectedAddonProducts.length >= 3) {
 						this.$store.commit('switchComponent', component);	
 						}
 						break;

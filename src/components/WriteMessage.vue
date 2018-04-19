@@ -11,7 +11,7 @@
 				<div class="WriteMessage__message">
 					<textarea @input="enterMessage" placeholder="Type your message..."></textarea>
 					<div v-if="enableBtn" class="next-btn">
-						<button class="buildbox-btn active" @click="$store.commit('switchComponent', 'PickRibbon')">CONTINUE</button>
+						<button class="buildbox-btn active" @click="$store.commit('switchComponent', 'Summary')">CONTINUE</button>
 					</div>
 					<div v-else class="next-btn">
 						<button class="buildbox-btn" disabled>CONTINUE</button>

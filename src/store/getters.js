@@ -36,12 +36,6 @@ let getters = {
 		}
 		return state.selectedMainProduct.price;
 	},
-	getRibbons(state) {
-		return state.ribbonProducts;
-	},
-	getSelectedRibbon(state) {
-		return state.selectedRibbon;
-	},
 	getMessage(state) {
 		return state.message;
 	},

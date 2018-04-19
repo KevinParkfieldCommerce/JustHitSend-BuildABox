@@ -72,7 +72,6 @@
 			addToCart() {
 				let mainProduct = this.$store.getters.getSelectedMainProduct;
 				let addonProducts = this.$store.getters.getSelectedAddonProducts;
-				let ribbon = this.$store.getters.getSelectedRibbon;
 				let cartQueue = [];
 				let boxKey = (Math.floor(Math.random() * 1000) + 1).toString();
 
@@ -94,7 +93,9 @@
 						id:mainProduct.id,
 						quantity: 1,
 						properties: {
-							'BoxNum': boxKey
+							'BoxNum': boxKey,
+							'Summary': this.listAddons,
+							'Message': this.getMessage
 						}
 					});
 					let combinedAddons = {};
@@ -114,13 +115,6 @@
 								'BoxNum': boxKey
 							}
 						});
-					});
-					cartQueue.push({
-						id: ribbon.variants[0].id,
-						quantity: 1,
-						properties: {
-							'BoxNum': boxKey
-						}
 					});
 					console.log(cartQueue);
 					ajaxAdd(cartQueue);
