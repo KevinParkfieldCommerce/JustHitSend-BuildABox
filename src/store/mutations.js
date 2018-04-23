@@ -40,6 +40,8 @@ let mutations = {
 		state.selectedAddonProducts.splice(index, 1);
 	},
 	switchComponent(state, payLoad) {
+		document.body.scrollTop = 0; // For Safari
+      	document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
 		state.selectedComponent = payLoad;
 	},
 	updateMessage(state, payLoad) {
