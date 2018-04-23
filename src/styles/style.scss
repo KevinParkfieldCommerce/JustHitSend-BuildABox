@@ -172,7 +172,7 @@ $pagebar-dot-active: #494949;
 		height: 2px;
 		width: 9px;
 		right: 42px;
-		bottom: 14px;
+		bottom: 35px;
 		transform: rotate(45deg);
 	}
 	&:after {
@@ -182,7 +182,7 @@ $pagebar-dot-active: #494949;
 		height: 2px;
 		width: 9px;
 		right: 37px;
-		bottom: 14px;
+		bottom: 35px;
 		transform: rotate(-45deg);
 	}
 }
@@ -458,6 +458,9 @@ $pagebar-dot-active: #494949;
 			color: $empty-slot-text;
 		}
 	}
+	.FixedCart__total {
+		margin: 0;
+	}
 }
 
 .WriteMessage {
@@ -617,4 +620,48 @@ $pagebar-dot-active: #494949;
 			padding-left: 30px;
 		}
 	}
+}
+
+.FixedCart {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 0;
+	border-top: 1px solid $item-border;
+	z-index: 5;
+	background-color: #fff;
+	overflow: hidden;
+	transition: height 0.3s;
+	.componentContainer {
+		height: 100%;
+		border: none;
+		display: flex;
+		align-items: center;
+	}
+	&__list {
+		display: flex;
+		margin: 0;
+		padding:0;
+		width: 63%;
+		list-style: none;
+		li {
+			margin-right: 20px;
+			width: 40px;
+			height: 40px;
+			border: 1px solid $item-hover-border;
+			img {
+				max-width: 100%;
+				max-height: 100%;
+				display: block;
+				margin: 0 auto;
+			}
+		}
+	}
+	.next-btn {
+		margin-left: auto;
+	}
+}
+.FixedCart.activeCart {
+	height: 66px;
 }

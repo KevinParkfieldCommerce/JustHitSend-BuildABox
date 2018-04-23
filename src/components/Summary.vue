@@ -94,7 +94,9 @@
 						id:mainProduct.id,
 						quantity: 1,
 						properties: {
-							'BoxNum': boxKey
+							'BoxNum': boxKey,
+							'Summary': this.listAddons,
+							'Message': this.getMessage
 						}
 					});
 					let combinedAddons = {};
