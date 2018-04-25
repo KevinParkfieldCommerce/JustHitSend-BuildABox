@@ -537,13 +537,22 @@ $pagebar-dot-active: #494949;
 			display: block;
 			margin: 0 auto;
 		}
+		span {
+			font-family: 'Brandon';
+			font-weight: bold;
+			font-size: 14px;
+			letter-spacing: 2px;
+			display: block;
+			text-align: center;
+			margin: 16px 0;
+		}
 	}
 	&__ribbon.active {
 		border-color: #000;
 	}
 	button {
 		display: block;
-		margin: 38px auto 44px;
+		margin: 60px auto 44px;
 	}
 }
 

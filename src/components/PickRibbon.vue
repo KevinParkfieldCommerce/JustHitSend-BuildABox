@@ -6,6 +6,7 @@
 			<ul class="PickRibbon__list">
 				<li v-for="ribbon in ribbonProducts" class="PickRibbon__ribbon" :class="selectedRibbon.id == ribbon.id ? 'active' : '' " @click="addRibbon(ribbon)">
 					<img :src="ribbon.images[0].src">
+					<span>{{ ribbon.title }}</span>
 				</li>
 			</ul>
 			<div v-if="enableBtn" class="next-btn">
