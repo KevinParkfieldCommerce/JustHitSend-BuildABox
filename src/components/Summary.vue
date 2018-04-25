@@ -3,7 +3,7 @@
 		<h1 class="heading">ADD TO CART</h1>
 		<div class="componentContainer">
 			<h1>YOUR CUSTOM GIFT</h1>
-			<p>Gifts are delivered within 3-4 business days!</p>
+			<p>Gifts are delivered within 2-3 business days!</p>
 			<div class="Summary__content">
 				<ul class="Summary__images">
 					<li>
