@@ -3,7 +3,7 @@
 		<h1 class="heading">WRITE A NOTE</h1>
 		<div class="componentContainer">
 			<h1>WHAT'S ON YOUR CARD</h1>
-			<p>Pick your card and customize your message.</p>
+			<p>Include your personal note here, and don’t forget to write your name!</p>
 			<div class="WriteMessage__content">
 				<div class="WriteMessage__card">
 					<img :src="$store.getters.getCardImage">
