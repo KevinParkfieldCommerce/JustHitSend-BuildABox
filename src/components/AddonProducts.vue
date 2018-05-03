@@ -2,7 +2,8 @@
 	<div class="AddonProducts componentContainer">
 		<h1>SELECT FROM THESE ITEMS</h1>
 		<div class="Filters">
-			<ProductFilter :options="addonFilterOptions(`Who's it for`)" category="Who's it for"></ProductFilter>	<ProductFilter :options="addonFilterOptions(`What’s the occasion`)" category="What’s the occasion"></ProductFilter>		
+			<ProductFilter :options="addonFilterOptions(`Who's it for`)" category="Who's it for"></ProductFilter>	
+			<ProductFilter :options="addonFilterOptions(`What's the occasion`)" category="What's the occasion"></ProductFilter>		
 		</div>
 		<ul class="AddonProducts__list">
 			<li v-for="product in addonProducts" class="AddonProducts__addonProduct">
