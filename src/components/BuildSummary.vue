@@ -2,7 +2,7 @@
 	<div class="BuildSummary">
 		<div class="componentContainer">
 			<h1>WHAT'S IN YOUR GIFT</h1>
-			<p>Pick 3 items for $50, 4 items for $65 or 5 items for $75.</p>
+			<p>Pick 3 items for ${{ getSinglePrice.variants[0].price.split('.')[0] }}, 4 items for ${{ getSinglePrice.variants[1].price.split('.')[0] }} or 5 items for ${{ getSinglePrice.variants[2].price.split('.')[0] }}.</p>
 			<div class="BuildSummary__info">
 				<ul class="BuildSummary__list">
 					<li v-for="product in getSelectedAddons" class="BuildSummary__addonProduct">
@@ -63,6 +63,9 @@
 			},
 			enableBtn() {
 				return this.$store.state.selectedAddonProducts.length >= 3;
+			},
+			getSinglePrice() {
+				return this.$store.getters.getMainProduct;
 			}
 		},
 		methods: {
